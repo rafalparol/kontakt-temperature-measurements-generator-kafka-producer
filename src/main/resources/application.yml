@@ -1,0 +1,24 @@
+spring:
+  kafka:
+    producer:
+      acks: 1
+      bootstrap-servers: 172.18.0.1:32772
+      client-id: temperature-measurements-generator-1
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+main:
+  config:
+    kafka:
+      topic:
+        name: temperature
+    temperature:
+      high: 30.0
+      low:  20.0
+      boost:
+        value: 10.0
+        probability: 0.1
+    thermometers: 2
+    rooms: 2
+    interval: 500
+    seed: 17
